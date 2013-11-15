@@ -1,4 +1,4 @@
-package com.algorithm.mock;
+package com.ps.mock;
 
 import java.util.Comparator;
 

@@ -1,4 +1,4 @@
-package com.algorithm.other;
+package com.ps.other;
 
 import static org.junit.Assert.*;
 

@@ -1,4 +1,4 @@
-package com.algorithm.recurse;
+package com.ps.recurse;
 
 import org.junit.Assert;
 import org.junit.Before;

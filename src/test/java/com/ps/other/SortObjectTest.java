@@ -1,4 +1,4 @@
-package com.algorithm.other;
+package com.ps.other;
 
 import java.util.Arrays;
 
@@ -6,9 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import sun.text.normalizer.CharTrie.FriendAgent;
-
-import com.algorithm.mock.Fruit;
+import com.ps.mock.Fruit;
 
 public class SortObjectTest {
 	

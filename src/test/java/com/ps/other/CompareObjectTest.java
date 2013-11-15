@@ -1,10 +1,10 @@
-package com.algorithm.other;
+package com.ps.other;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.algorithm.mock.Person;
+import com.ps.mock.Person;
 
 public class CompareObjectTest {
 	private Person person1,person2;

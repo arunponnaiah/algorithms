@@ -1,4 +1,4 @@
-package com.algorithm.swap;
+package com.ps.swap;
 
 
 import org.junit.Before;

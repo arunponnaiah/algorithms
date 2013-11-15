@@ -1,4 +1,4 @@
-package com.algorithm.recurse;
+package com.ps.recurse;
 
 public class ReverseString {
 	
