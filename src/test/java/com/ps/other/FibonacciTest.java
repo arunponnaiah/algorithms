@@ -5,9 +5,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class FibonacciTest {
-
+	private Fibonacci fibonacci;
 	@Before
 	public void setUp() throws Exception {
+		this.fibonacci = new Fibonacci();
 	}
 
 	@After
@@ -15,10 +16,8 @@ public class FibonacciTest {
 	}
 
 	@Test
-	public void testPrint() {
-		Fibonacci fibonacci = new Fibonacci();
-		fibonacci.generate(10);
-		
+	public void testGenerate() {
+		this.fibonacci.generate(10);
 	}
 
 }
