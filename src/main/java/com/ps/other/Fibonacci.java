@@ -2,19 +2,33 @@ package com.ps.other;
 
 
 public class Fibonacci {
-
-	public void generate(int range) {
-		int index = 0;
+	private int[] fibArr;
+	public Fibonacci() {
+		this.fibArr = new int[10];
+	}
+	public int[] generate(int range) {
+		this.fibArr = new int[range]; //initialize array
+		int index = 0;  // starting index of an array
 		while(index < range){
-			System.out.println(cal(index));
+			cal(index);
 			index++;
 		}
+		return fibArr;
 	}
 
 	private int cal(int index){
-		if(index==0) return 0;
-		if(index==1) return 1;
-		int fib = cal(index-1)+cal(index-2);
-		return fib;
+		switch (index) {
+			case 0:
+				fibArr[index]=0;
+				break;
+			case 1:
+				fibArr[index]=1;
+				break;
+			default:
+				int fib = cal(index-1)+cal(index-2);
+				fibArr[index]=fib;
+				break;
+		}
+		return fibArr[index];
 	}
 }
