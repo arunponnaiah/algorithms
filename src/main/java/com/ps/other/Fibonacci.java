@@ -5,7 +5,7 @@ public class Fibonacci {
 
 	public void generate(int range) {
 		int index = 0;
-		if(index <= range){
+		while(index < range){
 			System.out.println(cal(index));
 			index++;
 		}
