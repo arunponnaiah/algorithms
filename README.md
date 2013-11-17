@@ -1,3 +1,3 @@
 problems solved(ps):
 --------------------
-	This project is an exercise to solve problems such as swaping integers / reverse string using java programs. 
+	This project is an exercise to learn algorithms by solving basic problems such as swaping integers,reversing string using java programs. 
