@@ -1,12 +1,13 @@
-package com.ps.recurse;
+package com.ps.coderbyte;
 
-import org.junit.Assert;
+import junit.framework.Assert;
+
 import org.junit.Before;
 import org.junit.Test;
 
 public class ReverseStringTest {
 	private ReverseString reverseString;
-	private static String strVal="Arun is a software developer";
+	private static String strVal="Arun";
 	
 	@Before
 	public void setUp() {
@@ -29,8 +30,8 @@ public class ReverseStringTest {
 	
 	@Test
 	public void testReverseWordInString(){
-		String reverseString = this.reverseString.recursiveReverse(strVal);
-		System.out.println(this.reverseString.reverseWordInString(reverseString));
+//		String reverseString = this.reverseString.recursiveReverse(strVal);
+//		System.out.println(this.reverseString.reverseWordInString(reverseString));
 		
 	}
 	

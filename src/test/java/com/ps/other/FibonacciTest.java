@@ -5,6 +5,8 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.ps.other.Fibonacci;
+
 public class FibonacciTest {
 	private Fibonacci fibonacci;
 	@Before

@@ -1,4 +1,4 @@
-package com.ps.swap;
+package com.ps.other;
 
 
 import org.junit.Before;
