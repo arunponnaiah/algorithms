@@ -7,7 +7,6 @@ public class Fruit implements Comparable<Fruit> {
 	private int quantity;
 	
 	
-	@Override
 	public int compareTo(Fruit fruit) {
 		System.out.println("comparable executed");
 		int quantity = fruit.getQuantity(); 
