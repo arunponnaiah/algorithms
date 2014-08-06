@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class ReverseStringTest {
 	private ReverseString reverseString;
-	private static String strVal="Arun";
+	private static String strVal="Arun Ponnaiah";
 	
 	@Before
 	public void setUp() {
@@ -15,24 +15,33 @@ public class ReverseStringTest {
 	}
 	
 	@Test
+	public void testSimpleReverse(){
+		String reverseString = this.reverseString.simpleReverse(strVal);
+		System.out.println("simpleReverse >> "+reverseString);
+		Assert.assertNotNull(reverseString);
+		
+	}
+	
+	@Test
 	public void testIterativeReverse(){
 		String reverseString = this.reverseString.iterativeReverse(strVal);
-		System.out.println(reverseString);
+		System.out.println("iterativeReverse >> " +reverseString);
 		Assert.assertNotNull(reverseString);
 	}
 	
 	@Test
 	public void testRecursiveReverse(){
 		String reverseString = this.reverseString.recursiveReverse(strVal);
-		System.out.println(reverseString);
+		System.out.println("recursiveReverse >> " +reverseString);
  		Assert.assertNotNull(reverseString);
 	}
 	
 	@Test
 	public void testReverseWordInString(){
-//		String reverseString = this.reverseString.recursiveReverse(strVal);
-//		System.out.println(this.reverseString.reverseWordInString(reverseString));
-		
+		String reverseString = this.reverseString.reverseWordInString(strVal);
+		System.out.println("reverseWordInString >> " +reverseString);
+ 		Assert.assertNotNull(reverseString);
 	}
+	
 	
 }
