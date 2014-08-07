@@ -1,37 +1,11 @@
 package com.ps.mock;
 
-import java.util.Comparator;
+import java.util.Arrays;
 
-public class Fruit implements Comparable<Fruit> {
+
+public class Fruit implements Comparable<Fruit>{
 	private String name;
-	private int quantity;
-	
-	
-	public int compareTo(Fruit fruit) {
-		System.out.println("comparable executed");
-		int quantity = fruit.getQuantity(); 
-		if(this.quantity > quantity) return 1;
-		if(this.quantity < quantity) return -1;
-		return 0;
-	}
 
-	
-	public static Comparator<Fruit> FruitNameComparator 
-		    = new Comparator<Fruit>() {
-		
-		public int compare(Fruit fruit1, Fruit fruit2) {
-		System.out.println("comparator executed");
-		String fruitName1 = fruit1.getName().toUpperCase();
-		String fruitName2 = fruit2.getName().toUpperCase();
-		
-			//ascending order
-			return fruitName1.compareTo(fruitName2);
-			
-			//descending order
-//			return fruitName2.compareTo(fruitName1);
-			}
-		
-		};
 	public String getName() {
 		return name;
 	}
@@ -39,14 +13,33 @@ public class Fruit implements Comparable<Fruit> {
 	public void setName(String name) {
 		this.name = name;
 	}
-
-	public int getQuantity() {
-		return quantity;
+	
+	public static void main(String[] args) {
+		Fruit fruit1 = new Fruit();
+		fruit1.setName("Arun");
+		
+		Fruit fruit2 = new Fruit();
+		fruit2.setName("Akhil");
+		
+		Fruit fruit3 = new Fruit();
+		fruit3.setName("Anu");
+		
+		Fruit[] fruits = new Fruit[]{fruit1,fruit2,fruit3};
+		Arrays.sort(fruits);
+		
+		for(Fruit fruit : fruits){
+			System.out.println(fruit.getName());
+		}
+		
 	}
 
-	public void setQuantity(int quantity) {
-		this.quantity = quantity;
+	public int compareTo(Fruit fruit) {
+		System.out.println("compareTo >> " + fruit.getName());
+		if(this.getName().length() > fruit.getName().length()  )
+			return 1;
+		else
+			return -1;	
 	}
-
+	
 	
 }

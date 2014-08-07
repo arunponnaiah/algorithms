@@ -15,8 +15,8 @@ public class TimeConvertTest {
 
 	@Test
 	public void convert() {
-		String result = this.timeConvert.convert(126);
-		assertEquals("2:6", result);
+		String result = this.timeConvert.convert(6);
+		assertEquals("0:6", result);
 	}
 
 }

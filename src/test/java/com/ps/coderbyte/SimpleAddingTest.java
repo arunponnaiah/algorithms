@@ -18,6 +18,7 @@ public class SimpleAddingTest {
 		
 		SimpleAdding simpleAdding = new SimpleAdding();
 		int result = simpleAdding.add(5);
+		System.out.println("result >> " + result);
 		assertEquals(15, result);
 	}
 
