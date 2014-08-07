@@ -1,14 +1,11 @@
 package com.ps.coderbyte;
 
 public class SimpleAdding {
-
 	public int add(int num) {
-		// TODO Auto-generated method stub
-		int result = 0;
-		if(num!=0){
-			result = num + add(--num);
+		if(num==0){
+			return num;
 		}
-		return result;
+		return num + add(--num);
 	}
 	
 }
