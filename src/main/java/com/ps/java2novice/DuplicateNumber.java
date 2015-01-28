@@ -41,4 +41,26 @@ public class DuplicateNumber {
 			return set;
 		}
 
+		/*
+		 * Find a duplicate number in a sorted array with in range from 1 to 5
+		 */
+		public int findWithinRange(int[] inputArr) {
+			int uniqueTotal=0;
+			int val=1;
+			int index=0;
+			while(index <5){
+				uniqueTotal = uniqueTotal+val;
+				val++;
+				index++;
+			}
+			
+			int actualTotal=0;
+			for(int i : inputArr){
+				actualTotal = actualTotal +i;
+			}
+			return actualTotal - uniqueTotal;
+		}
+		
+		
+
 }
