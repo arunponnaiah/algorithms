@@ -5,8 +5,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class DuplicateNumber {
-	
-	// O(n) time complexity
+	/*
+	 * Find duplicate numbers in a integer array using sorting strategy 
+	 * Time complexity - O(n)
+	 */
 		public Set<Integer> findBySorting(int[] inputArr){
 			Set<Integer> set = new HashSet<Integer>();
 			
@@ -20,6 +22,12 @@ public class DuplicateNumber {
 			}
 			return set;
 		}
+		
+		
+		/*
+		 * Find duplicate numbers in a integer array using brute force strategy 
+		 * Time complexity - O(n)
+		 */
 		// O(n^2) time complexity
 		public Set<Integer> findByBruteForce(int[] inputArr){
 			Set<Integer> set = new HashSet<Integer>();
