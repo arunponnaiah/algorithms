@@ -26,7 +26,7 @@ public class DuplicateNumber {
 		
 		/*
 		 * Find duplicate numbers in a integer array using brute force strategy 
-		 * Time complexity - O(n)
+		 * Time complexity - O(n^2)
 		 */
 		// O(n^2) time complexity
 		public Set<Integer> findByBruteForce(int[] inputArr){
