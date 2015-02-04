@@ -1,34 +1,39 @@
 package com.ps.other;
 
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * Generate Fibonacci numbers using recursive algorithm
+ * @author Arun
+ *
+ */
 
 public class Fibonacci {
-	private int[] fibArr;
-	public Fibonacci() {
-		this.fibArr = new int[10];
+	private List<Integer> fibonacciNumbers;
+	private int range;
+	
+	public Fibonacci(){
+		this.fibonacciNumbers = new ArrayList<Integer>();
 	}
-	public int[] generate(int range) {
-		this.fibArr = new int[range]; //initialize array
-		int index = 0;  // starting index of an array
-		while(index < range){
-			cal(index);
-			index++;
-		}
-		return fibArr;
+	
+	public List<Integer> generate(int range) {
+		this.range = range;
+		int fn1=0;
+		int fn2=1;
+		fibonacciNumbers.add(fn1);
+		fibonacciNumbers.add(fn2);
+		calc(fn1,fn2);
+		return fibonacciNumbers;
 	}
 
-	private int cal(int index){
-		switch (index) {
-			case 0:
-				fibArr[index]=0;
-				break;
-			case 1:
-				fibArr[index]=1;
-				break;
-			default:
-				int fib = cal(index-1)+cal(index-2);
-				fibArr[index]=fib;
-				break;
+	private void calc(int fn1, int fn2) {
+		if(fibonacciNumbers.size() >= range){
+			return;
 		}
-		return fibArr[index];
+		
+		int fibNum = fn1 + fn2;
+		fibonacciNumbers.add(fibNum);
+		calc(fn2,fibNum);
 	}
 }
