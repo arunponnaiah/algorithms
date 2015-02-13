@@ -16,6 +16,7 @@ public class JosephusTest {
 	@Test
 	public void testExecute() {
 		int n=41,k=3;
-		assertEquals(30,this.josephus.execute(n, k));
+		assertEquals(31,this.josephus.findSurvivorByList(n, k));
+		assertEquals(31,this.josephus.findSurvivorByRecursion(n, k));
 	}
 }
