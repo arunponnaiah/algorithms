@@ -1,3 +1,3 @@
-problems solving:
+Algorithms:
 ----------------
-	This project has basic problems and its solutions using java. 
+	This project has solutions to different problems using java programming language. 
