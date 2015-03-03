@@ -1,9 +1,11 @@
-package com.ps.coderbyte;
+package com.algorithms.coderbyte;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.algorithms.coderbyte.TimeConvert;
 
 public class TimeConvertTest {
 	private TimeConvert timeConvert; 

@@ -1,4 +1,4 @@
-package com.ps.coderbyte;
+package com.algorithms.coderbyte;
 
 public class AlphabetSoup {
 	public String test(String str){

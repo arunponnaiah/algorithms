@@ -1,4 +1,4 @@
-package com.ps.mock;
+package com.algorithms.mock;
 
 public class Person {
 	private String firstName;

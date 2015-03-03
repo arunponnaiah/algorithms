@@ -1,9 +1,11 @@
-package com.ps.coderbyte;
+package com.algorithms.coderbyte;
 
 import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.algorithms.coderbyte.ReverseString;
 
 public class ReverseStringTest {
 	private ReverseString reverseString;

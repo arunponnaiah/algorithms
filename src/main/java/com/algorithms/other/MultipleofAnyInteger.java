@@ -1,4 +1,4 @@
-package com.ps.other;
+package com.algorithms.other;
 
 public class MultipleofAnyInteger {
 	public void print(int min, int max,int divider) {

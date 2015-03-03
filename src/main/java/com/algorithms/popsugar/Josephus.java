@@ -1,4 +1,4 @@
-package com.ps.popsugar;
+package com.algorithms.popsugar;
 
 import java.util.LinkedList;
 import java.util.List;

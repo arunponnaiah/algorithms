@@ -1,11 +1,11 @@
-package com.ps.coderbyte;
+package com.algorithms.coderbyte;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.ps.coderbyte.SimpleSymbols;
+import com.algorithms.coderbyte.SimpleSymbols;
 
 public class SimpleSymbolsTest {
 	private SimpleSymbols simpleSymbols;

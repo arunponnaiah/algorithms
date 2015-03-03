@@ -1,4 +1,4 @@
-package com.ps.other;
+package com.algorithms.other;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,7 +9,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.ps.other.Fibonacci;
+import com.algorithms.other.Fibonacci;
 
 public class FibonacciTest {
 	private Fibonacci fibonacci;

@@ -1,4 +1,4 @@
-package com.ps.java2novice;
+package com.algorithms.java2novice;
 
 import static org.junit.Assert.*;
 

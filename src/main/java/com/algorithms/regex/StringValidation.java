@@ -1,4 +1,4 @@
-package com.ps.regex;
+package com.algorithms.regex;
 
 
 public class StringValidation {

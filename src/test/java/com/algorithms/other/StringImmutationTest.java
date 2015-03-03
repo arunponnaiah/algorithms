@@ -1,4 +1,4 @@
-package com.ps.other;
+package com.algorithms.other;
 
 import org.junit.After;
 import org.junit.Before;

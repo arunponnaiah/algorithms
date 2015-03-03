@@ -1,4 +1,4 @@
-package com.ps.regex;
+package com.algorithms.regex;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

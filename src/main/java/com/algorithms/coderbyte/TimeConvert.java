@@ -1,4 +1,4 @@
-package com.ps.coderbyte;
+package com.algorithms.coderbyte;
 
 public class TimeConvert {
 	public String convert(int in){

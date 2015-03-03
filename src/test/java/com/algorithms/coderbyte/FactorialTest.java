@@ -1,11 +1,11 @@
-package com.ps.coderbyte;
+package com.algorithms.coderbyte;
 
 import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
 
-import com.ps.coderbyte.Factorial;
+import com.algorithms.coderbyte.Factorial;
 
 public class FactorialTest {
 	private Factorial factorial;
