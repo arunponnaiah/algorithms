@@ -15,6 +15,7 @@ public class PerfectNumberTest {
 	@Test
 	public void test() {
 		assertTrue(this.perfectNumber.isPerfectNumber(6));
+		assertFalse(this.perfectNumber.isPerfectNumber(11));
 	}
 
 }
