@@ -1,25 +1,40 @@
 package com.algorithms.java2novice;
 
 public class ArrayList {
-
-	public void add(int i) {
-		// TODO Auto-generated method stub
-		
+	private Integer[] intArr;
+	private int size;
+	public ArrayList(){
+		this(10);
+	}
+	
+	public ArrayList(int capacity){
+		if (capacity < 0)
+			throw new IllegalArgumentException("Illegal Capacity: "+capacity);
+		this.intArr = new Integer[capacity];
+	}
+	
+	public void add(Integer i) {
+		checkCapacity();
+		intArr[this.size] = i;
+		this.size++;
 	}
 
-	public void remove(int i) {
-		// TODO Auto-generated method stub
-		
+	private void checkCapacity() {
+		if(this.size > this.intArr.length )
+			throw new IllegalArgumentException("Illegal Capacity: "+size);
+	}
+
+	public void remove(int index) {
 	}
 
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size;
 	}
 
 	public Integer get(int i) {
-		// TODO Auto-generated method stub
-		return null;
+		if(i > this.size)
+			throw new IllegalArgumentException("Illegal Capacity: "+i);
+		return this.intArr[i];
 	}
 	
 	
