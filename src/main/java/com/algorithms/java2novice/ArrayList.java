@@ -13,10 +13,11 @@ public class ArrayList {
 		this.intArr = new Integer[capacity];
 	}
 	
-	public void add(Integer i) {
+	public boolean add(Integer i) {
 		checkCapacity();
 		intArr[this.size] = i;
 		this.size++;
+		return true;
 	}
 
 	private void checkCapacity() {
@@ -24,11 +25,12 @@ public class ArrayList {
 			throw new IllegalArgumentException("Illegal Capacity: "+size);
 	}
 
+    // TODO
 	public void remove(int index) {
 	}
 
 	public int size() {
-		return size;
+		return this.size;
 	}
 
 	public Integer get(int i) {
@@ -37,7 +39,13 @@ public class ArrayList {
 		return this.intArr[i];
 	}
 	
-	
-	
+	public boolean isEmpty(){
+		return (this.size==0)?true:false;
+	}
 
+	//TODO
+	public boolean contains(int i) {
+
+		return false;
+	}
 }
