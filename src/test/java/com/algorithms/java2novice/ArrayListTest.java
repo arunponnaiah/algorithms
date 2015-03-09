@@ -19,10 +19,11 @@ public class ArrayListTest {
 		Assert.assertEquals(true, isAdded);
 	}
 	
-//	@Test
-//	public void testRemove() {
-//		this.arrayList.remove(1);
-//	}
+	@Test
+	public void testRemove() {
+		this.testAdd();
+		Assert.assertTrue(this.arrayList.remove(1));
+	}
 	
 	@Test
 	public void testSize() {

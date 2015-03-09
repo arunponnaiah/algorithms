@@ -14,19 +14,43 @@ public class ArrayList {
 	}
 	
 	public boolean add(Integer i) {
-		checkCapacity();
-		intArr[this.size] = i;
-		this.size++;
+		if(checkCapacity()){
+			intArr[this.size] = i;
+			this.size++;
+		}else{
+			Integer[] dest= new Integer[this.size+10]; 
+			System.arraycopy(intArr, 0, dest, 0, this.size);
+		}
+		return true;
+		
+	}
+
+	private boolean checkCapacity() {
+		if(this.size >= this.intArr.length )
+			return false;
 		return true;
 	}
 
-	private void checkCapacity() {
-		if(this.size > this.intArr.length )
-			throw new IllegalArgumentException("Illegal Capacity: "+size);
-	}
-
-    // TODO
-	public void remove(int index) {
+	public boolean remove(Integer obj) {
+		boolean isDuplicate=false;
+		
+		if(contains(obj)){
+			
+			Integer[] dest= new Integer[--this.size];
+			int index=0;
+			for(int i =0;i<this.size; i++){
+				System.out.println(i);
+				if(this.intArr[i].equals(obj) && !isDuplicate){
+					isDuplicate=true;
+					continue;
+				}
+				else{
+					dest[index] = this.intArr[i];
+					index++;
+				}
+			}
+		}
+		return true;
 	}
 
 	public int size() {
@@ -43,9 +67,12 @@ public class ArrayList {
 		return (this.size==0)?true:false;
 	}
 
-	//TODO
-	public boolean contains(int i) {
-
+	public boolean contains(Integer obj) {
+		for(int i =0;i<this.size; i++){
+			if(obj.equals(this.intArr[i])){ 
+				return true;
+			}
+		}
 		return false;
 	}
 }
