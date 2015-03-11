@@ -1,4 +1,4 @@
-package com.algorithms.popsugar;
+package com.algorithms.other;
 
 import static org.junit.Assert.*;
 
