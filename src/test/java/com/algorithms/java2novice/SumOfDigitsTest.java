@@ -14,7 +14,7 @@ public class SumOfDigitsTest {
 	}
 
 	@Test
-	public void test() {
+	public void testExecute() {
 		assertEquals(10, this.sumOfDigits.execute(253));
 	}
 
