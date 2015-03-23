@@ -14,8 +14,9 @@ public class PrimeNumberTest {
 	}
 
 	@Test
-	public void testCheck() {
-		assertTrue(this.primeNumber.check(6));
+	public void testIsPrime() {
+		assertTrue(this.primeNumber.isPrime(15));
+		assertFalse(this.primeNumber.isPrime(17));
 	}
 
 }
