@@ -16,8 +16,9 @@ public class MaxRepeatWordsTest {
 	}
 
 	@Test
-	public void testFind() {
-		File file = new File("./input.txt");
+	public void testFind() throws Exception {
+		File file = new File("src/main/resources/input.txt");
+		
 		assertEquals("Arun",this.maxRepeatWords.find(file));
 	}
 
