@@ -19,11 +19,9 @@ public class DuplicateCharTest {
 	@Test
 	public void testFind() {
 		Set<Character> duplicates = new HashSet<Character>();
-		duplicates.add('A');
-		duplicates.add('K');
-		duplicates.add('u');
-		duplicates.add('r');
-		Assert.assertEquals(duplicates, duplicateChar.find("AArun KKumar"));
+		duplicates.add('a');
+		duplicates.add('n');
+		Assert.assertEquals(duplicates, duplicateChar.find("Arun Ponnaiah"));
 	}
 
 }
