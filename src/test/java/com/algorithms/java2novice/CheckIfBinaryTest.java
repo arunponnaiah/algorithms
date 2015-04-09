@@ -14,8 +14,13 @@ public class CheckIfBinaryTest {
 	}
 
 	@Test
-	public void test() {
-		assertTrue(this.checkIfBinary.isBinary(1101));
+	public void testTrue() {
+		assertTrue(this.checkIfBinary.isBinary(110));
+	}
+	
+	@Test
+	public void testFalse() {
+		assertFalse(this.checkIfBinary.isBinary(1005));
 	}
 
 }
