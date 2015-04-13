@@ -2,7 +2,8 @@ package com.algorithms.sorting;
 
 public class InsertionSort {
 	/**
-	 * Insertion Sorting using (while loop) subroutine 
+	 * Insertion Sorting using (while loop) subroutine:
+	 * Forloop stmt proceed with next index in the array once while loop compares & swaps previous indexes.
 	 * @param arr
 	 * @return
 	 */
