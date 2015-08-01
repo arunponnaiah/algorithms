@@ -5,7 +5,7 @@
   <artifactId>algorithm</artifactId>
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>algorithm</name>
+  <name>programming algorithms</name>
   <url>http://maven.apache.org</url>
   <dependencies>
 	  <dependency>
