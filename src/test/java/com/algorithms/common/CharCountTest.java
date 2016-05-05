@@ -6,7 +6,7 @@ import org.junit.Test;
 import junit.framework.Assert;
 
 public class CharCountTest {
-	public CharCount charCount;
+	private CharCount charCount;
 	
 	@Before
 	public void setUp() throws Exception {
