@@ -33,7 +33,7 @@ public class ConsecutiveIntegers {
 		Set<Integer> keys = map.keySet();
 		List<Integer> result = new ArrayList<Integer>();
 		for(Integer key : keys){
-			if( map.get(key) > 2){
+			if( map.get(key) > 2){ // 3 or more consecutive array  of integers 
 				result.add(key);
 			}
 		}
