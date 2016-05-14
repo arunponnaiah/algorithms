@@ -3,7 +3,11 @@ package com.algorithms.string;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
-
+/**
+ * count number of duplicate characters 
+ * @author aponnaia
+ *
+ */
 public class CharacterCount {
 	public Map<Character, Integer> count(String str){
 		 //String str = "abcabcdef";
