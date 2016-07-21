@@ -8,9 +8,7 @@ public class AtleastOne {
 	public int find(int[] intArr){
 		int result = 0;
 		for(int i : intArr){
-			System.out.println(result +"^="+i);
 		  result ^= i;
-		  System.out.println("="+result);
 		}
 		return result;
 	}

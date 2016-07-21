@@ -20,8 +20,6 @@ public class NonRecuringElementInList {
 			}
 		}
 		
-		System.out.println(map);
-		
 		Set<Integer> set = map.keySet();
 		for(int key:set){
 			if(map.get(key) ==1){

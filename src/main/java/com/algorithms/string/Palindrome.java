@@ -50,8 +50,6 @@ public class Palindrome {
 				return o2.getValue().compareTo(o1.getValue());
 			}
 		});
-		
-		System.out.println(list);
 		return list;
 	}
 }

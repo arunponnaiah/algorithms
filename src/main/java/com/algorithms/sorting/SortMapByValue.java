@@ -14,7 +14,6 @@ public class SortMapByValue {
 	public String sort(Map<String, Integer> map){
 		
 	    Set<Entry<String, Integer>> set = map.entrySet();
-	    //System.out.println(set.toString());
 	    List<Entry<String , Integer>> mapList = new ArrayList<Entry<String,Integer>>(set);
 	    Collections.sort(mapList , new Comparator<Entry<String, Integer>>()
 	    {
