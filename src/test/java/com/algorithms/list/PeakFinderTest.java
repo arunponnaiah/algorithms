@@ -15,12 +15,12 @@ private PeakFinder peakFinder;
 
 	@Test
 	public void test1() {
-		Assert.assertEquals(100,this.peakFinder.find(new int[]{100,3,10,29,30,2,5,1}));
+		Assert.assertEquals(30,this.peakFinder.find(new int[]{100,3,10,29,30,2,5,1}));
 	}
 	
 	@Test
 	public void test2() {
-		Assert.assertEquals(100,this.peakFinder.find(new int[]{1,3,10,0,30,2,5,100}));
+		Assert.assertEquals(10,this.peakFinder.find(new int[]{1,3,10,0,30,2,5,100}));
 	}
 	
 	@Test
