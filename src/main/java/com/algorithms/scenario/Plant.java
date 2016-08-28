@@ -1,5 +1,12 @@
 package com.algorithms.scenario;
 
+/**
+ * Given array : arr[0,1,0,0]  & number of 1’s
+ * Condition : 1 can’t be next to another 
+ * UC : if n=1 , returns true . if n=2 returns false;  
+ * 
+ * @author aponnaia
+ */
 public class Plant {
 	public boolean canPlant(int[] arr,int n){
 		int index=0;
