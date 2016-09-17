@@ -1,6 +1,5 @@
 package com.algorithms.sorting;
 
-
 /**
 * QuickSort is an in-place sorting algorithm to sort an input with out using extra space.
 * 
@@ -30,11 +29,12 @@ public int[] sortNumbers(int[] input){
  * @return
  */
 private int[] sort(int[] input, int start, int end) {
-	if(start < end){
-		int pivotIndex = partitionByPivot(input,start,end);
-		sort(input, start, pivotIndex-1);
-		sort(input, pivotIndex+1, end);
-	}
+	int index = partitionByPivot(input,start,end);
+	
+	if (start < index - 1)
+		sort(input, start, index - 1);
+	if (index < end)
+        sort(input, index, end);
 	return input;
 }
 
@@ -47,48 +47,36 @@ private int[] sort(int[] input, int start, int end) {
  * @return
  */
 private int partitionByPivot(int[] input, int start, int end) {
-	int pivot = input[input.length-1];
+	int pivotIndex = (start + end)/2;
 	
-	while(start < end){
-		while (input[start] < pivot ){
-			start++;
+	int pivot = input[pivotIndex];
+	int lowerIndex=start;
+	int higherIndex=end;
+	
+	while(lowerIndex <= higherIndex){
+		while (input[lowerIndex] < pivot ){
+			lowerIndex++;
 		}
-		while (input[end] > pivot ){
-			end--;
+		while (input[higherIndex] > pivot ){
+			higherIndex--;
 		}
-		swap(input,start,end);
+		swap(input,lowerIndex,higherIndex);
+		lowerIndex++;
+		higherIndex--;
 	}
-	
-	return getPivotIndex(input,pivot);
+	return lowerIndex;
 }
 
+/**
+ * Swap 2 integers using temp variable.
+ * @param input
+ * @param i
+ * @param j
+ */
+private void swap(int[] input, int i, int j) {
+	int temp = input[i];
+	input[i] = input[j];
+	input[j] = temp;
+}
 
-	/**
-	 * Returns array index of pivot element. 
-	 * @param input
-	 * @param pivot
-	 * @return
-	 */
-	private int getPivotIndex(int[] input,int pivot) {
-		int pivotIndex=-1;
-		for(int val : input){
-			pivotIndex++;
-			if(val == pivot){
-				return pivotIndex;
-			}
-		}
-		return -1;
-	}
-
-	/**
-	 * Swap 2 integers using temp variable.
-	 * @param input
-	 * @param i
-	 * @param j
-	 */
-	private void swap(int[] input, int i, int j) {
-		int temp = input[i];
-		input[i] = input[j];
-		input[j] = temp;
-	}
 }
