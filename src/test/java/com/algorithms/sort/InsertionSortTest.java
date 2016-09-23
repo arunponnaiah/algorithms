@@ -1,9 +1,11 @@
-package com.algorithms.sorting;
+package com.algorithms.sort;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.algorithms.sort.InsertionSort;
 
 public class InsertionSortTest {
 	private InsertionSort insertionSort;

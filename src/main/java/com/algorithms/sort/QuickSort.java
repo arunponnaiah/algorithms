@@ -1,4 +1,4 @@
-package com.algorithms.sorting;
+package com.algorithms.sort;
 
 /**
 * QuickSort is an in-place sorting algorithm to sort an input with out using extra space.

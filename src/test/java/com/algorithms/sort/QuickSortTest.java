@@ -1,9 +1,11 @@
-package com.algorithms.sorting;
+package com.algorithms.sort;
 
 import static org.junit.Assert.assertArrayEquals;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.algorithms.sort.QuickSort;
 
 public class QuickSortTest {
 	private QuickSort quickSort;

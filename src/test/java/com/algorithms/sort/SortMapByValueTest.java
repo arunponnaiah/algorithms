@@ -1,10 +1,12 @@
-package com.algorithms.sorting;
+package com.algorithms.sort;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import com.algorithms.sort.SortMapByValue;
 
 import junit.framework.Assert;
 

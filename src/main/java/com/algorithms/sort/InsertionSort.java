@@ -1,4 +1,4 @@
-package com.algorithms.sorting;
+package com.algorithms.sort;
 
 public class InsertionSort {
 	/**
