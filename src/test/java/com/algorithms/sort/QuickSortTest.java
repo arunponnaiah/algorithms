@@ -17,12 +17,12 @@ public class QuickSortTest {
 
 	@Test
 	public void test1() {
-		assertArrayEquals(new int[]{1,2,3,4,5},this.quickSort.sortNumbers(new int[]{5,4,3,2,1}));
+		assertArrayEquals(new int[]{1,2,3,4,5},this.quickSort.sort(new int[]{5,4,3,2,1}));
 	}
 	
 	@Test
 	public void test2() {
-		assertArrayEquals(new int[]{10,20,30,40,50},this.quickSort.sortNumbers(new int[]{30,40,50,10,20}));
+		assertArrayEquals(new int[]{10,20,30,40,50},this.quickSort.sort(new int[]{30,40,50,10,20}));
 	}
 	
 }

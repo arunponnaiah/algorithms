@@ -15,7 +15,7 @@ public class QuickSort {
  * @param input
  * @return
  */
-public int[] sortNumbers(int[] input){
+public int[] sort(int[] input){
 	int start=0;
 	int end =input.length-1;
 	return sort(input,start,end);
@@ -29,42 +29,57 @@ public int[] sortNumbers(int[] input){
  * @return
  */
 private int[] sort(int[] input, int start, int end) {
-	int index = partitionByPivot(input,start,end);
-	
-	if (start < index - 1)
-		sort(input, start, index - 1);
-	if (index < end)
-        sort(input, index, end);
+	if(start  < end){
+		int partitionIndex = partition(input,start,end);
+		sort(input,start,partitionIndex-1);
+		sort(input,partitionIndex+1,end);
+	}
 	return input;
 }
 
 /**
  * partition guarantees all left elements in array are less than pivot and all right elements are greater than pivot.
+ * Step1: take 1st element from array as pivot
+ * Step2: compare other elements to the pivot and swap them to the left of pivot if left < pivot  
  * @param input
  * @param start
  * @param end
  * @param pivot
  * @return
  */
-private int partitionByPivot(int[] input, int start, int end) {
-	int pivotIndex = (start + end)/2;
+private int partition(int[] input,int start,int end) {
+	int pivotIndex = start;
+	int pivot = input[start];
+	int left =start+1;
+	int right = end;
 	
-	int pivot = input[pivotIndex];
-	int lowerIndex=start;
-	int higherIndex=end;
-	
-	while(lowerIndex <= higherIndex){
-		while (input[lowerIndex] < pivot ){
-			lowerIndex++;
+	while( true ){
+		while(left <= right){
+			if(input[left] < pivot){
+				left++;
+			}else{
+				break;
+			}
 		}
-		while (input[higherIndex] > pivot ){
-			higherIndex--;
+
+		while(right > left){
+			if(input[right] > pivot){
+				right--;
+			}else{
+				break;
+			}
 		}
-		swap(input,lowerIndex,higherIndex);
-		lowerIndex++;
-		higherIndex--;
+
+		if(left >= right){
+			break;
+		}
+		swap(input,left,right);
+		left++;
+		right--;
 	}
-	return lowerIndex;
+	swap(input,left-1,pivotIndex);
+	
+	return left-1;
 }
 
 /**
@@ -73,10 +88,10 @@ private int partitionByPivot(int[] input, int start, int end) {
  * @param i
  * @param j
  */
-private void swap(int[] input, int i, int j) {
-	int temp = input[i];
-	input[i] = input[j];
-	input[j] = temp;
+private void swap(int[] input, int src, int destn) {
+	int temp = input[src];
+	 input[src] =  input[destn];
+	 input[destn] = temp;
 }
 
 }
