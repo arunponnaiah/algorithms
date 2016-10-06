@@ -29,7 +29,7 @@ public class MergeListsToOneSortedListTest {
 	}
 
 	private List<Integer> initializeList1() {
-		List<Integer> list = new ArrayList<>();
+		List<Integer> list = new ArrayList<Integer>();
 		list.add(1);
 		list.add(3);
 		list.add(5);
@@ -37,7 +37,7 @@ public class MergeListsToOneSortedListTest {
 	}
 	
 	private List<Integer> initializeList2() {
-		List<Integer> list = new ArrayList<>();
+		List<Integer> list = new ArrayList<Integer>();
 		list.add(2);
 		list.add(4);
 		list.add(6);
