@@ -1,6 +1,5 @@
 package com.algorithms.string;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 /**
@@ -13,7 +12,6 @@ public class CharacterCount {
 		 //String str = "abcabcdef";
 		char[] strArr = str.toCharArray();
 		
-		Arrays.sort(strArr);
 		Map<Character, Integer> map = new HashMap<Character, Integer>();
 		
 		for(int index = 0 ; index < strArr.length; index++){
