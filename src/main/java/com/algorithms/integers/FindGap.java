@@ -1,7 +1,5 @@
 package com.algorithms.integers;
 
-import java.util.ArrayList;
-import java.util.List;
 /**
  * Given a sorted array of unique integers between 0 and 99 (inclusive), 
  * write a function which returns a string summarizing any gaps in the array.
@@ -21,55 +19,43 @@ public class FindGap {
 	 * @param input
 	 * @return
 	 */
-	public String summarizeGaps(int[] input) {
-		   List<String> output = new ArrayList<String>();
-		   int min,max=0;
-		   
-		   for(int i=0;i<input.length;i++){
-			   // start index
-		        if(i==0){
-		        	min=0;
-		        	max=input[i]-1;
-		        	output.add(min+"-"+max);
-		        }//end index
-		        else if(i==input.length-1){
-		        	min= input[i] +1;
-		        	max=99;
-		        	output.add(min+"-"+max);
-		        }// middle indices
-		        else if(i < input.length-1){
-		        	if(input[i+1] - input[i] ==1){
-		        		continue;
-		        	}else if(input[i+1] - input[i] == 2){
-		        		max = input[i]+1;
-		        		output.add(max+"");
-		        	}else{
-		        		min = input[i]+1;
-		        		max = input[i+1]-1;
-		        		output.add(min+"-"+max);
-		        	}
-		        }
-		   }
-		   
-		   return createFinalStringFromList(output);
+	public String summarizeGaps(int[] arr) {
+		int min=0;
+		int max=0;
+		StringBuilder strBuilder = new StringBuilder();
+		
+		//edge case
+		if(arr[0] > 0){
+			min =0;
+			max=arr[0]-1;
 		}
-
-	/**
-	 * Creates final string format with comma and space between each gap.
-	 * @param output
-	 * @return
-	 */
-	private String createFinalStringFromList(List<String> output) {
-		StringBuilder stringBuilder = new StringBuilder();
-		   for(int i=0; i< output.size();i++){
-			   if(i == output.size()-1){
-				   stringBuilder.append(output.get(i));
-			   } else{
-				   stringBuilder.append(output.get(i)).append(", ");
-			   }
-		   }
-		    return stringBuilder.toString();
+		
+		strBuilder.append(min+"-"+max).append(", ");
+		
+		for(int i=0,j=i+1; i<arr.length-1;i++,j++){
+			 min = arr[i];
+			 max = arr[j];
+			 int diff = max-min;
+			 if(diff ==2){
+				 strBuilder.append(min+1).append(", ");
+			 }
+			 else if(diff > 2){
+				 min = min+1;
+				 max = min+(diff-2);
+				 strBuilder.append(min+"-"+max).append(", ");
+			 }
+			
+			 
+		}
+		
+		//edge case
+		if(arr[arr.length-1] <99){
+			int diff = 99-arr[arr.length-1];
+			min =arr[arr.length-1]+1;
+			max=(arr[arr.length-1]+1) + (diff-1);
+		}
+		
+		strBuilder.append(min+"-"+max);
+		return strBuilder.toString();
 	}
-	
-	
 }
