@@ -19,6 +19,13 @@ public class GCD {
 	}
 	
 	private static int find(int a , int b){
+		//swap numbers if dividend(a) is smaller than divisor(b).
+		if(a < b){
+			a = a+b; 
+			b= a-b;
+			a = a-b;
+		}
+		//find GCD between 2 numbers through iteration
 		while(b>0){
 			int reminder = a%b;
 			a=b;
