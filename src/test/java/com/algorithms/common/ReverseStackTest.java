@@ -30,7 +30,7 @@ public class ReverseStackTest {
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
-		assertEquals(expectedStack , this.reverseStack.reverse(stack));
+		assertEquals(expectedStack , this.reverseStack.reverseRevisioned(stack));
 	}
 
 }

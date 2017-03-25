@@ -44,4 +44,24 @@ public class ReverseStack {
 			stack.push(item);
 		}
 	}
+	
+	public  Stack<Integer> reverseRevisioned(Stack<Integer> stack){
+		if(!stack.isEmpty()){
+			int item = stack.pop(); 
+			reverseRevisioned(stack);
+			redoPopAndCopy(stack,item);
+		}
+		
+		return stack;
+	}
+	private void redoPopAndCopy(Stack<Integer> stack, Integer item){
+		if(stack.isEmpty()){
+			stack.push(item);
+		}else{
+			Integer temp = stack.pop();
+			redoPopAndCopy(stack, item);
+			stack.push(temp);
+		}
+		
+	}
 }
