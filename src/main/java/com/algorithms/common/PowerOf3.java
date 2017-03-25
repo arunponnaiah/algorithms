@@ -6,7 +6,7 @@ package com.algorithms.common;
  *
  */
 
-public class CheckPowerOf3 {
+public class PowerOf3 {
 	
 	/**
 	 * Check Integer is power of 3.
@@ -14,7 +14,7 @@ public class CheckPowerOf3 {
 	 * @return boolean
 	 */
 
-	public boolean check(int num) {
+	public boolean checkByRecursion(int num) {
 		int q = num/3;
 		
 		if(q==3){
@@ -22,7 +22,18 @@ public class CheckPowerOf3 {
 		}else if(q<3){
 			return false;
 		}else{
-			return check(q);
+			return checkByRecursion(q);
+		}
+	}
+	
+	public boolean checkByLooping(int n){
+		while(n%3==0){
+			n/=3;
+		}
+		if(n==1){
+			return true;
+		}else{
+			return false;
 		}
 	}
 }
