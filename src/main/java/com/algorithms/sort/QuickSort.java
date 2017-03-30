@@ -8,90 +8,70 @@ package com.algorithms.sort;
 * 
 * @author aponnaia
 */
+
 public class QuickSort {
-
-/**
- * High level function to call sort array recursively.
- * @param input
- * @return
- */
-public int[] sort(int[] input){
-	int start=0;
-	int end =input.length-1;
-	return sort(input,start,end);
-}
-
-/**
- * Recursive function to sort array elements.
- * @param input
- * @param start
- * @param end
- * @return
- */
-private int[] sort(int[] input, int start, int end) {
-	if(start  < end){
-		int partitionIndex = partition(input,start,end);
-		sort(input,start,partitionIndex-1);
-		sort(input,partitionIndex+1,end);
-	}
-	return input;
-}
-
-/**
- * partition guarantees all left elements in array are less than pivot and all right elements are greater than pivot.
- * Step1: take 1st element from array as pivot
- * Step2: compare other elements to the pivot and swap them to the left of pivot if left < pivot  
- * @param input
- * @param start
- * @param end
- * @param pivot
- * @return
- */
-private int partition(int[] input,int start,int end) {
-	int pivotIndex = start;
-	int pivot = input[start];
-	int left =start+1;
-	int right = end;
 	
-	while( true ){
-		while(left <= right){
-			if(input[left] < pivot){
-				left++;
-			}else{
-				break;
+	/**
+	 * Recursive function to sort array elements.
+	 * @param arr
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	
+	public static int[] sort(int[] arr){
+		int start=0;
+		int end =arr.length-1;
+		return quickSort(arr, start, end);
+	}
+	
+	
+	
+	private static int[] quickSort(int[] arr, int start, int end) {
+		
+		if(start <= end){
+			int pIndex = partition(arr,start,end);
+			swap(arr,pIndex,end);
+			quickSort(arr,start,pIndex-1);
+			quickSort(arr,pIndex+1,end);
+		}
+		
+		return arr;
+	}
+
+	/**
+	 * partition guarantees all left elements in array are less than pivot and all right elements are greater than pivot.
+	 * Step1: take 1st element from array as pivot
+	 * Step2: compare other elements to the pivot and swap them to the left of pivot if left < pivot  
+	 * @param arr
+	 * @param start
+	 * @param end
+	 * @return
+	 */
+	private static int partition(int[] arr, int start, int end) {
+		int pivot = arr[end];
+		int pIndex  = start;
+		
+		for(int i=start; i<end; i++){
+			if(arr[i] < pivot){
+				swap(arr,i,pIndex);
+				pIndex++;
 			}
 		}
-
-		while(right > left){
-			if(input[right] > pivot){
-				right--;
-			}else{
-				break;
-			}
-		}
-
-		if(left >= right){
-			break;
-		}
-		swap(input,left,right);
-		left++;
-		right--;
+		
+		return pIndex;
 	}
-	swap(input,left-1,pivotIndex);
-	
-	return left-1;
+
+	/**
+	 * Swap 2 integers using temp variable.
+	 * @param input
+	 * @param i
+	 * @param j
+	 */
+	private static void swap(int[] input, int src, int destn) {
+		int temp = input[src];
+		 input[src] =  input[destn];
+		 input[destn] = temp;
+	}
 }
 
-/**
- * Swap 2 integers using temp variable.
- * @param input
- * @param i
- * @param j
- */
-private void swap(int[] input, int src, int destn) {
-	int temp = input[src];
-	 input[src] =  input[destn];
-	 input[destn] = temp;
-}
-
-}
