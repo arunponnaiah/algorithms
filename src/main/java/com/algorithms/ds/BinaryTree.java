@@ -23,11 +23,10 @@ public class BinaryTree {
         if(node.rightNode != null)
             queue.add(node.rightNode);
 
-        if(queue.isEmpty())
-            return results;
-        return levelOrderTraversal(queue.remove(0));
+        if(!queue.isEmpty())
+            return levelOrderTraversal(queue.remove(0));
+        return results;
     }
-
 
     class Node{
         Node(int data){
