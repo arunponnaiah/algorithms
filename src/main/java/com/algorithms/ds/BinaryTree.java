@@ -28,6 +28,33 @@ public class BinaryTree {
         return results;
     }
 
+    public List<Integer> preOrderTraversal(Node node){
+        if(node == null)
+            return results;
+        results.add(node.data);
+        preOrderTraversal(node.leftNode);
+        preOrderTraversal(node.rightNode);
+        return results;
+    }
+
+    public List<Integer> inOrderTraversal(Node node) {
+        if(node == null)
+            return results;
+        preOrderTraversal(node.leftNode);
+        results.add(node.data);
+        preOrderTraversal(node.rightNode);
+        return results;
+    }
+
+    public List<Integer> postOrderTraversal(Node node) {
+        if(node == null)
+            return results;
+        preOrderTraversal(node.leftNode);
+        preOrderTraversal(node.rightNode);
+        results.add(node.data);
+        return results;
+    }
+
     class Node{
         Node(int data){
             this.data = data;
