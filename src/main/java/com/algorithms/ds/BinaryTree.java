@@ -1,26 +1,38 @@
 package com.algorithms.ds;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public class BinaryTree {
 
-    private static List<Node> queue = new LinkedList<Node>();
+    private List<Node> queue;
+    private List<Integer> results;
 
-    // Breath First Traversal
-    public static void levelOrderTraversal(Node node){
+    public BinaryTree(){
+        this.queue = new LinkedList<Node>();
+        this.results = new ArrayList<Integer>();
+    }
+
+    public List<Integer> levelOrderTraversal(Node node){
         if(node == null)
-            return;
-        System.out.println(node.data);
+            return results;
+        results.add(node.data);
         if(node.leftNode != null)
             queue.add(node.leftNode);
         if(node.rightNode != null)
             queue.add(node.rightNode);
-        levelOrderTraversal(queue.remove(0));
+
+        if(queue.isEmpty())
+            return results;
+        return levelOrderTraversal(queue.remove(0));
     }
 
 
     class Node{
+        Node(int data){
+            this.data = data;
+        }
         Node rightNode;
         Node leftNode;
         int data;
