@@ -8,6 +8,7 @@ public class BinaryTree {
 
     private List<Node> queue;
     private List<Integer> results;
+    private int index;
 
     public BinaryTree(){
         this.queue = new LinkedList<Node>();
@@ -53,6 +54,30 @@ public class BinaryTree {
         preOrderTraversal(node.rightNode);
         results.add(node.data);
         return results;
+    }
+
+    public List<Integer> serializeByPreorderTraversal(Node node){
+        if(node == null){
+            results.add(-1);
+            return results;
+        }
+        results.add(node.data);
+        serializeByPreorderTraversal(node.leftNode);
+        serializeByPreorderTraversal(node.rightNode);
+        return results;
+    }
+
+    public Node deserializeByPreorderTraversal(List<Integer> array) {
+        if(index == array.size() || array.get(index) == -1){
+            index +=1;
+            return null;
+        }
+        int data = array.get(index);
+        Node node = new Node(data);
+        index +=1;
+        node.leftNode = deserializeByPreorderTraversal(array);
+        node.rightNode = deserializeByPreorderTraversal(array);
+        return node;
     }
 
     class Node{

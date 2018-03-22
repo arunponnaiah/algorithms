@@ -42,4 +42,17 @@ public class BinaryTreeTest {
         List<Integer> expected = Arrays.asList(2,3,1);
         Assert.assertEquals(expected, this.binaryTree.postOrderTraversal(rootNode));
     }
+
+    @Test
+    public void testSerialize(){
+        List<Integer> expected = Arrays.asList(1,2,-1,-1,3,-1,-1);
+        Assert.assertEquals(expected, this.binaryTree.serializeByPreorderTraversal(rootNode));
+    }
+
+    @Test
+    public void testDeserialize(){
+        List<Integer> input = Arrays.asList(1,2,-1,-1,3,-1,-1);
+        List<Integer> expected = Arrays.asList(1,2,3);
+        Assert.assertEquals(expected, this.binaryTree.preOrderTraversal(this.binaryTree.deserializeByPreorderTraversal(input)));
+    }
 }
