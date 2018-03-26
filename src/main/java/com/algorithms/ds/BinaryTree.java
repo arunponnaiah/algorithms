@@ -41,9 +41,9 @@ public class BinaryTree {
     public List<Integer> inOrderTraversal(Node node) {
         if(node == null)
             return results;
-        preOrderTraversal(node.leftNode);
+        inOrderTraversal(node.leftNode);
         results.add(node.data);
-        preOrderTraversal(node.rightNode);
+        inOrderTraversal(node.rightNode);
         return results;
     }
 
@@ -79,6 +79,36 @@ public class BinaryTree {
         node.rightNode = deserializeByPreorderTraversal(array);
         return node;
     }
+
+    public Node constructBinaryTreeFromInorderTraversal(List<Integer> list , int start, int end, Node node){
+        if (start > end)
+            return null;
+
+        int maxIndex = findMaxIndex(list, start, end);
+        node = new Node(list.get(maxIndex));
+
+        if (start == end)
+            return node;
+
+        node.leftNode = constructBinaryTreeFromInorderTraversal(list, start, maxIndex - 1, node.leftNode);
+        node.rightNode = constructBinaryTreeFromInorderTraversal(list, maxIndex + 1, end, node.rightNode);
+        return node;
+    }
+
+    private int findMaxIndex(List<Integer> list, int strt, int end){
+        int i, maxValue = list.get(strt), maxIndex = strt;
+        for (i = strt + 1; i <= end; i++)
+        {
+            if (list.get(i) > maxValue)
+            {
+                maxValue = list.get(i);
+                maxIndex = i;
+            }
+        }
+        return maxIndex;
+    }
+
+
 
     class Node{
         Node(int data){
