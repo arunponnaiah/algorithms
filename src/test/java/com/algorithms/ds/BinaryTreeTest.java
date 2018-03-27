@@ -60,16 +60,7 @@ public class BinaryTreeTest {
     @Test
     public void testConstructBinaryTreeForInorder(){
         List<Integer> list = new LinkedList<Integer>(Arrays.asList(1,2,3,4,5));
-        this.binaryTree = new BinaryTree();
-        rootNode = this.binaryTree.new Node(4);
-        rootNode.leftNode = this.binaryTree.new Node(2);
-        rootNode.leftNode.leftNode = this.binaryTree.new Node(1);
-        rootNode.leftNode.rightNode = this.binaryTree.new Node(3);
-        rootNode.rightNode = this.binaryTree.new Node(5);
-
         BinaryTree.Node root = this.binaryTree.constructBinaryTreeFromInorderTraversal(list,0, list.size()-1, null);
         Assert.assertEquals(list, this.binaryTree.inOrderTraversal(root));
     }
-
-
 }
