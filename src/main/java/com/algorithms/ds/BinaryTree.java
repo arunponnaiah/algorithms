@@ -80,7 +80,7 @@ public class BinaryTree {
         return node;
     }
 
-    public Node constructBinaryTreeFromInorderTraversal(List<Integer> list , int start, int end, Node node){
+    public Node constructBinaryTreeFromInorderTraversal(List<Integer> list, int start, int end, Node node){
         if (start > end)
             return null;
 
@@ -95,20 +95,14 @@ public class BinaryTree {
         return node;
     }
 
-    private int findMaxIndex(List<Integer> list, int strt, int end){
-        int i, maxValue = list.get(strt), maxIndex = strt;
-        for (i = strt + 1; i <= end; i++)
-        {
-            if (list.get(i) > maxValue)
-            {
-                maxValue = list.get(i);
-                maxIndex = i;
-            }
+    private int findMaxIndex(List<Integer> list, int start, int end) {
+        int maxIndex = start;
+        start++;
+        if (start < end) {
+            return list.indexOf(list.subList(start, end).stream().mapToInt(Integer::intValue).max().getAsInt());
         }
         return maxIndex;
     }
-
-
 
     class Node{
         Node(int data){
